@@ -56,10 +56,11 @@ const forecast=require('./utils/forecast')
            if(error){
            return  res.send({error})
            }
-             forecast(latitude,longitude,(error,{temperature,weather_description}={})=>{
+             forecast(latitude,longitude,(error,{temperature,weather_description,humidity}={})=>{
                res.send({
                      temperature:temperature+' degree f',
                      weather_description:weather_description,
+                     humidity:humidity,
                      location
                })
              })
