@@ -5,6 +5,7 @@ const messageOne=document.querySelector('#message-1')
 const messageTwo=document.querySelector('#message-2')
 const messageThree=document.querySelector('#message-3')
 
+
 weatherform.addEventListener('submit',(e)=>{
     e.preventDefault()
     const location=search.value;
@@ -12,6 +13,7 @@ weatherform.addEventListener('submit',(e)=>{
       messageOne.textContent='Loading...'
       messageTwo.textContent=''   
       messageThree.textContent=''   
+      
  
     fetch('/weather?address='+location).then(response=>{
          
@@ -22,7 +24,7 @@ weatherform.addEventListener('submit',(e)=>{
                 else{
                     messageTwo.textContent=data.location
                     messageOne.textContent=data.temperature  
-                    messageThree.textContent=data.weather_description     
+                    messageThree.textContent=data.weather_description    
                 }
             })
     
